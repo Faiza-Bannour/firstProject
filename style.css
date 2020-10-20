@@ -1,4 +1,5 @@
 body{
+
     background-image: url("visa.jpg");
     background-size: cover;
     background-repeat: no-repeat;   
@@ -9,32 +10,120 @@ body{
 .item3 { grid-area: main;}
 .item4 { grid-area: right; }
 
-.item2 ul li{
-    text-align: left;
+
+.item2 ul {
+    display: inline;
 }
 
+.item2 ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 10px;
+}
+
+.item2 ul a {
+    color: orangered;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.item2 ul li:after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: red;
+    display: block;
+    margin: auto;
+    transition: 2s;
+}
+
+.item2 ul li:hover:after {
+    width: 100%;
+}
 
 .grid-container {
-    height: 100vh;
-  display: grid;
-  grid-template-areas:
-    'header header header header header header'
-    'menu main main main main right'
-    'menu main main main main right'
-    'menu main main main main right'
-    'menu main main main main right'
-    'menu main main main main right';
-  grid-gap: 4px;
-  padding: 2px;
+    height: 93vh;
+    display: grid;
+    grid-template-areas:
+        'header header header header header header'
+        'menu main main main main right'
+        'menu main main main main right'
+        'menu main main main main right'
+        'menu main main main main right'
+        'menu main main main main right';
+    grid-gap: 4px;
+    padding: 2px;
 }
 
 .grid-container > div {
+    height: 440px;
     background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
-    padding: 20px 0;
+    /* padding: 20px 0; */
     font-size: 30px;
   }
-.types:hover{background-color: red;}
-.item3{
-    text-align: center;
+
+#slider{
+    overflow: hidden;
+}
+
+#slider section{
+    position: relative;
+    width: 500%;
+    left: 0;
+    animation: 20s slider infinite;
+}
+
+#slider section img{
+    height: 125px;
+    float: left;
+    width: 20%;
+}
+
+@keyframes slider {
+    0% {
+        left: 0;
+    }
+    20% {
+        left: 0;
+    }
+    -30% {
+        left: -100%;
+    }
+    40% {
+        left: -100%;
+    }
+    50% {
+        left: -200%;
+    }
+    60% {
+        left: -200%;
+    }
+    70% {
+        left: -300%;
+    }
+    95% {
+        left: -300%;
+    }
+}
+
+li{
+    color: orangered;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+}
+
+li:not(:last-child){
+    margin-bottom: 10px;
+}
+
+li::before{
+    content: "\262A";
+    color: red;
+}
+
+#item1{
+    height: 110px;
+    margin-bottom: 20px;
 }
